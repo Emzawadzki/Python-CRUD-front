@@ -1,12 +1,11 @@
 import { Container } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Layout: React.FC = ({ children }) => (
-    <><header>Header</header>
-        <Container maxWidth="lg">
-            {children}
-        </Container>
-    </>
-)
+  <>
+    <header>Header</header>
+    <Container maxWidth="lg">{children}</Container>
+  </>
+);
 
-export default Layout
+export default Layout;

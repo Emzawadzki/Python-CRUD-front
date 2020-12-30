@@ -1,13 +1,13 @@
-export interface ErrorResponse<T> {
+export interface ErrorResponse {
   data: null;
-  error: string; //TODO: add errors enum/typing
+  error: string; // TODO: add errors enum/typing
 }
 export interface SuccessResponse<T> {
   data: T;
   error: null;
 }
 
-export type ApiResponse<T> = SuccessResponse<T> | ErrorResponse<T>;
+export type ApiResponse<T> = SuccessResponse<T> | ErrorResponse;
 
 export interface RawPerson {
   id: number;

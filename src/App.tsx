@@ -5,7 +5,7 @@ import { Person } from "./api/types";
 import { parsePerson } from "./api/helpers";
 import Layout from "./components/Layout";
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
   const [error, setError] = useState("");
   const [people, setPeople] = useState<Person[]>([]);
   useEffect(() => {
@@ -31,3 +31,5 @@ export const App: React.FC = () => {
     </Layout>
   );
 };
+
+export default App;
