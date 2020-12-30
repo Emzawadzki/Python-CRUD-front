@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`persePerson should return parsed data 1`] = `
+Object {
+  "firstName": "test-first-name",
+  "id": 6,
+  "lastName": "test-last-name",
+}
+`;
