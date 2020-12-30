@@ -1,27 +1,25 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 
 import { Api } from "./api";
 import { Person } from "./api/types";
 import { parsePerson } from "./api/helpers";
-
-const Title = styled.h1``;
+import Layout from "./components/Layout";
 
 export const App: React.FC = () => {
   const [error, setError] = useState("");
   const [people, setPeople] = useState<Person[]>([]);
   useEffect(() => {
     Api.getPeople().then((res) => {
-      if (res.status === "success") {
+      if (res.data) {
         setPeople(res.data.map(parsePerson));
-      } else if (res.status === "error") {
+      } else {
         setError(res.error);
       }
     });
   }, []);
   return (
-    <>
-      <Title>People list</Title>
+    <Layout>
+      <h1>People list</h1>
       <ul>
         {people.map(({ id, firstName, lastName }) => (
           <li key={id}>
@@ -30,6 +28,6 @@ export const App: React.FC = () => {
         ))}
       </ul>
       <p>{error}</p>
-    </>
+    </Layout>
   );
 };

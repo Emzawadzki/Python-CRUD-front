@@ -1,10 +1,8 @@
 export interface ErrorResponse<T> {
-  status: "error";
   data: null;
   error: string; //TODO: add errors enum/typing
 }
 export interface SuccessResponse<T> {
-  status: "success";
   data: T;
   error: null;
 }
